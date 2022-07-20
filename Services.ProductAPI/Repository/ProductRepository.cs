@@ -11,7 +11,7 @@ namespace Services.ProductAPI.Repository
         private readonly AppDbContext _db;    
         private readonly IMapper _mapper;   
 
-        public ProductRepository(AppDbContext db, Mapper mapper)
+        public ProductRepository(AppDbContext db, IMapper mapper)
         {
             _db = db;
             _mapper = mapper;   
