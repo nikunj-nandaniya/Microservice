@@ -53,5 +53,56 @@ namespace Services.ProductAPI.Controllers
             return _responseDTO;
         }
 
+
+        [HttpPost]        
+        public async Task<object>AddProduct(ProductDto productDto)
+        {
+            try
+            {
+                ProductDto _productDto = await _productRepository.CreateUpdateProduct(productDto);
+                _responseDTO.Result = _productDto;
+            }
+            catch (Exception ex)
+            {
+                _responseDTO.IsSuccess = false;
+                _responseDTO.ErrorMessages = new List<string>() { ex.ToString() };
+            }
+
+            return _responseDTO;
+        }
+
+        [HttpPut]
+        public async Task<object> UpdateProduct(ProductDto productDto)
+        {
+            try
+            {
+                ProductDto _productDto = await _productRepository.CreateUpdateProduct(productDto);
+                _responseDTO.Result = _productDto;
+            }
+            catch (Exception ex)
+            {
+                _responseDTO.IsSuccess = false;
+                _responseDTO.ErrorMessages = new List<string>() { ex.ToString() };
+            }
+
+            return _responseDTO;
+        }
+
+        [HttpDelete]
+        public async Task<object> DeleteProduct(int id)
+        {
+            try
+            {
+                bool _isSuccess = await _productRepository.DeleteProduct(id);
+                _responseDTO.Result = _isSuccess;
+            }
+            catch (Exception ex)
+            {
+                _responseDTO.IsSuccess = false;
+                _responseDTO.ErrorMessages = new List<string>() { ex.ToString() };
+            }
+
+            return _responseDTO;
+        }
     }
 }
