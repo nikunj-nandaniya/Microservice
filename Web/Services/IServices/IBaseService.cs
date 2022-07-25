@@ -2,10 +2,10 @@
 
 namespace Web.Services.IServices
 {
-    public interface IBaseService
+    public interface IBaseService 
     {
 
-        ResponseDto _responseDto { get; set; }
+        ResponseDto responseDto { get; set; }
 
         Task<T> SendAsync<T>(ApiRequest apiRequest);
 

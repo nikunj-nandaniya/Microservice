@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Web.Services.IServices
 {
-    public interface IProductService
+    public interface IProductService  
     {
         Task<T> GetAllProductsAsync<T>();
         Task<T> GetProdtcByIdAsync<T>(int id);
