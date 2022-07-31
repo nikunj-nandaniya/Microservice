@@ -1,4 +1,4 @@
-﻿namespace ServicesWeb.Models
+﻿namespace Web.Models
 {
     public class ProductDto
     {

@@ -20,7 +20,7 @@ namespace Web.Services
 
         public ResponseDto responseDto { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public async Task<T> SendAsync<T>(ApiRequest apiRequest)
+        public async Task<T>SendAsync<T>(ApiRequest apiRequest)
         {
             try
             {

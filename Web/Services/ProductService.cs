@@ -1,5 +1,4 @@
-﻿using ServicesWeb.Models;
-using Web.Models;
+﻿using Web.Models;
 using Web.Services.IServices;
 using Web.Common;
 
@@ -9,9 +8,9 @@ namespace Web.Services
     {
 
         private readonly IHttpClientFactory _clientFactory;
-        public ProductService(IHttpClientFactory httpClient) : base(httpClient)
+        public ProductService(IHttpClientFactory clientFactory) : base(clientFactory)
         {
-            _clientFactory = httpClient;    
+            _clientFactory = clientFactory;    
         }
 
         public async Task<T> CreateProductAsync<T>(ProductDto productDto)

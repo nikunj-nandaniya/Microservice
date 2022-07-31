@@ -1,7 +1,16 @@
+using Web.Common;
+using System.Configuration;
+using Web.Services.IServices;
+using Web.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddHttpClient<IProductService, ProductService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddControllersWithViews();
+
+APIBase.ProductAPIBase = builder.Configuration["ServiceUrls:ProductAPI"];
 
 var app = builder.Build();
 
